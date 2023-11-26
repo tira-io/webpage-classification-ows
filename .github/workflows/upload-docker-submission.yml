@@ -68,5 +68,5 @@ jobs:
       - name: Build, test, and upload image
         run: |
           docker build -t ${{ env.IMAGE_TAG }} -f ${{ github.workspace }}/${{ env.TIRA_DOCKER_PATH }}/${{ env.TIRA_DOCKER_FILE }} ${{ github.workspace }}/${{ env.TIRA_DOCKER_PATH }}
-          tira-run --input-dataset webpage-classification/tiny-sample-20231023-training --image ${{ env.IMAGE_TAG }} --command '${{ env.TIRA_COMMAND}}' --push true
+          tira-run --input-dataset webpage-classification/tiny-sample-20231023-training --image ${{ env.IMAGE_TAG }} --command '${{ env.TIRA_COMMAND}}' --push true  --fail-if-output-is-empty
 
